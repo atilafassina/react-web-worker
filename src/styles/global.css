@@ -1,0 +1,28 @@
+:root {
+  --bkg-color: black;
+  --txt-color: white;
+  --fallback-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  background-color: var(--bkg-color);
+  color: var(--txt-color);
+  margin: 0;
+  font-family: var(--fallback-font);
+  overflow: hidden;
+  font-size: 3rem;
+}
+
+button {
+  font-size: 1.2rem;
+  display: block;
+  margin: 1em 0;
+}
+
+div {
+  height: 100vh;
+  margin: 0;
+  padding: 1em;
+}

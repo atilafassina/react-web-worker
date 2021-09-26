@@ -1,0 +1,31 @@
+{
+  "name": "parcel-web-worker",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": {
+    "name": "Atila Fassina",
+    "email": "oss@fassina.eu",
+    "url": "https://atila.io"
+  },
+  "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "parcel": "^2.0.0-rc.0",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "comlink": "^4.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

@@ -1,6 +1,7 @@
 import type { FC } from 'react'
-import { runBigTask, runBigTaskAsync } from '../utils/big-task'
+import type { ComlinkWorker } from '../utils/comlink-worker'
 import { wrap } from 'comlink'
+import { runBigTask, runBigTaskAsync } from '../utils/big-task'
 import * as styles from '../styles/dashboard.module.css'
 
 type DashboardProps = {
@@ -15,20 +16,18 @@ const Dashboard: FC<DashboardProps> = ({ setData }) => {
       <button
         onClick={() => {
           setData('loading')
-
           setData(runBigTask(TASK_SIZE, 'sync'))
         }}
       >
-        Run Sync
+        Sync
       </button>
       <button
         onClick={async () => {
           setData('loading')
-
           setData(await runBigTaskAsync(TASK_SIZE))
         }}
       >
-        Run Async
+        Promise
       </button>
       <button
         onClick={async () => {
@@ -41,12 +40,11 @@ const Dashboard: FC<DashboardProps> = ({ setData }) => {
             }
           )
 
-          const { runBigTask } =
-            wrap<import('../utils/comlink-worker').RunBigTaskWorker>(worker)
+          const { runBigTask } = wrap<ComlinkWorker>(worker)
           setData(await runBigTask(TASK_SIZE))
         }}
       >
-        Run Comlink-WebWorker
+        Comlink WebWorker
       </button>
       <button
         onClick={async () => {
@@ -66,7 +64,7 @@ const Dashboard: FC<DashboardProps> = ({ setData }) => {
           })
         }}
       >
-        Run Vanilla-WebWorker
+        Vanilla WebWorker
       </button>
     </aside>
   )

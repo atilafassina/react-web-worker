@@ -5,6 +5,6 @@ const worker = {
   runBigTask: async (int: number) => await runBigTask(int, 'comlink-worker'),
 }
 
-export type RunBigTaskWorker = typeof worker
+export type ComlinkWorker = typeof worker
 
 expose(worker)

@@ -2,28 +2,27 @@ import { useState } from 'react'
 import * as styles from '../styles/root.module.css'
 import { Dashboard } from './dashboard'
 
-const reactNy = new URL('../images/react-ny.svg', import.meta.url)
-const atilaio = new URL('../images/atilaio.svg', import.meta.url)
+// const reactNy = new URL('../images/react-ny.svg', import.meta.url)
+// const atilaio = new URL('../images/atilaio.svg', import.meta.url)
 
 export function Root() {
   const [data, setData] = useState<string>('')
   return (
     <>
-      <header className={styles.top}>
+      {/* <header className={styles.top}>
         <a href="https://reactnewyork.com">
           <img src={reactNy.href} className={styles.logo} alt="" />
         </a>
-      </header>
+      </header> */}
       <div className={styles.wrapper}>
         <Dashboard setData={setData} />
         <button
           className={styles.boop}
           onClick={() => {
             const screen = document.querySelector('#screen') as HTMLDivElement
-            const img = document.createElement('img')
-            img.src = reactNy.href
-            img.alt = 'React New York'
-            screen.appendChild(img)
+            const span = document.createElement('span')
+            span.innerText = '⚡️'
+            screen.appendChild(span)
           }}
         >
           boop
@@ -37,7 +36,7 @@ export function Root() {
         />
         <span>{data}</span>
       </div>
-      <footer className={styles.bottom}>
+      {/* <footer className={styles.bottom}>
         <a href="https://atila.io">
           <img
             className={styles.atila}
@@ -45,7 +44,7 @@ export function Root() {
             alt="atila.io logo"
           />
         </a>
-      </footer>
+      </footer> */}
     </>
   )
 }

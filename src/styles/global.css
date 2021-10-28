@@ -24,9 +24,19 @@ body {
 }
 
 button {
-  font-size: 1.2rem;
+  font-size: 2rem;
   display: block;
   margin: 1em 0;
+  border: solid 1px currentColor;
+  outline: none;
+  background-color: black;
+  border-radius: 2px;
+  color: white;
+}
+
+button:active {
+  background-color: hotpink;
+  color: black;
 }
 
 footer {

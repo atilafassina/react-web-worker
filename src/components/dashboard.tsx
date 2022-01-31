@@ -33,7 +33,7 @@ const Dashboard: FC<DashboardProps> = ({ setData }) => {
         onClick={async () => {
           setData('loading')
           const worker = new Worker(
-            new URL('../utils/comlink-worker', import.meta.url),
+            new URL('../utils/comlink-worker.ts', import.meta.url),
             {
               name: 'runBigTaskWorker',
               type: 'module',
@@ -50,7 +50,7 @@ const Dashboard: FC<DashboardProps> = ({ setData }) => {
         onClick={async () => {
           setData('loading')
           const worker = new Worker(
-            new URL('../utils/vanilla-worker', import.meta.url),
+            new URL('../utils/vanilla-worker.ts', import.meta.url),
             {
               name: 'vanilla-worker',
               type: 'module',
